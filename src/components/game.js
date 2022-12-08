@@ -6,22 +6,26 @@ const Game = (props) => {
     id, hometeam, awayteam, location, stadium, price, photo, date,
   } = props;
 
+  const fixture = `${hometeam} vs ${awayteam}`;
+  const place = `${stadium}, ${location}`;
+
   return (
-    <div id={id}>
-      {hometeam}
-      {' '}
-      vs
-      {awayteam}
-      at
-      {stadium}
-      in
-      {location}
-      for $
-      {price}
-      on
-      {' '}
-      {date}
-      <img src={photo} alt="da,jd" />
+    <div
+      id={id}
+      className="gameDiv"
+    >
+      <img
+        src={photo}
+        alt="stadium"
+        className="gamePic"
+      />
+      <p>{fixture}</p>
+      <p>{place}</p>
+      <p>{date}</p>
+      <p>
+        $
+        {price}
+      </p>
     </div>
   );
 };
