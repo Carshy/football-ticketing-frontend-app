@@ -1,17 +1,36 @@
 import React from 'react';
-import Match from './Match';
-import '../nav.css';
+import { NavLink, Routes, Route } from 'react-router-dom';
+import Match from '../pages/Match';
+import MyReservations from '../pages/MyReservations';
+import '../styles/navbar.scss';
 
 function Nav() {
   return (
-    <div className="split">
-      <ul>
-        <li className="list-item">Matches</li>
-        <li className="list-item">Tickets</li>
-        <li className="list-item">Reserved</li>
-      </ul>
-      <Match />
-    </div>
+    <>
+      <nav className="navbar">
+        <img
+          src="https://img.freepik.com/premium-photo/close-up-football-action-scene-with-competing-soccer-players-stadium_207634-5551.jpg?w=826"
+          alt="logo"
+        />
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+        >
+          Matches
+        </NavLink>
+        <NavLink
+          to="/myreservations"
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+        >
+          Tickets
+        </NavLink>
+      </nav>
+      <hr />
+      <Routes>
+        <Route path="/" element={<Match />} />
+        <Route path="/myreservations" element={<MyReservations />} />
+      </Routes>
+    </>
   );
 }
 
