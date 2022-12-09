@@ -18,21 +18,33 @@
   margin: 0 100px;
 
   img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
+    width: auto;
+    height: 60%;
   }
 }
 
 .scrollLeft {
   position: relative;
   right: 52%;
-  top: 130px;
+  top: 230px;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: greenyellow;
+  cursor: pointer;
 }
 
 .scrollRight {
   position: relative;
   left: 52%;
-  top: 130px;
+  top: 230px;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: greenyellow;
+  cursor: pointer;
+}
+
+.selection-list {
+  color: #d3d3d3;
 }

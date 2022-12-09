@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import Match from '../pages/Match';
 // import MyReservations from '../pages/MyReservations';
-import '../styles/navbar.scss';
+import './styles/navbar.scss';
 
 function Nav() {
   return (
