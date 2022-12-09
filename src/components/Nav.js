@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import Match from '../pages/Match';
-import MyReservations from '../pages/MyReservations';
+// import MyReservations from '../pages/MyReservations';
 import '../styles/navbar.scss';
 
 function Nav() {
@@ -28,7 +28,7 @@ function Nav() {
       <hr />
       <Routes>
         <Route path="/" element={<Match />} />
-        <Route path="/myreservations" element={<MyReservations />} />
+        {/* <Route path="/myreservations" element={<MyReservations />} /> */}
       </Routes>
     </>
   );
