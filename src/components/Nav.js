@@ -28,7 +28,6 @@ function Nav() {
       <hr />
       <Routes>
         <Route path="/" element={<Match />} />
-        <Route path="/Reservation" element={<Reservation />} />
       </Routes>
     </>
   );
