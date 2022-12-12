@@ -1,6 +1,6 @@
 .form-field {
     font-family: sans-serif;
-    background: #1a1a1a;
+    background: greenyellow;
     padding: 4rem;
     margin: auto;
     width: 100%;
@@ -10,6 +10,8 @@
   form {
     margin: 5rem auto 0;
     width: 31rem;
+    object-fit: contain;
+    z-index: 1;
   
     div,
     select {
@@ -30,14 +32,25 @@
     input[type="submit"] {
       height: 3rem;
       font-size: 1rem;
-      color: #fff;
-      background: #0971f1;
+      color: #000;
+      background: #fff;
       cursor: pointer;
+      border-radius: 4rem;
     }
   
     p {
       margin-top: 0.5rem;
       color: #ff9900;
+    }
+
+    .overlay_circle {
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+      width: 100%;
+      height: 95%;
     }
   }
 }
