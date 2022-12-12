@@ -1,5 +1,10 @@
 import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
+import {
+  AiFillLinkedin, AiOutlineTwitter, AiFillYoutube, AiFillFacebook,
+} from 'react-icons/ai';
+import { BsGithub } from 'react-icons/bs';
+import Details from '../pages/Details';
 import Match from '../pages/Match';
 // import MyReservations from '../pages/MyReservations';
 import './styles/navbar.scss';
@@ -19,15 +24,30 @@ function Nav() {
           Matches
         </NavLink>
         <NavLink
+          to="/Tickets"
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+        >
+          Ticket
+        </NavLink>
+        <NavLink
           to="/myreservations"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Tickets
+          Reservations
         </NavLink>
+
+        <ul className="nav-links">
+          <li className="nav-link"><AiFillLinkedin /></li>
+          <li className="nav-link"><AiOutlineTwitter /></li>
+          <li className="nav-link"><AiFillYoutube /></li>
+          <li className="nav-link"><BsGithub /></li>
+          <li className="nav-link"><AiFillFacebook /></li>
+        </ul>
+        <div className="copy">Microverse Copyright 2022</div>
       </nav>
-      <hr />
       <Routes>
         <Route path="/" element={<Match />} />
+        <Route path="matches/:id" element={<Details />} />
         {/* <Route path="/myreservations" element={<MyReservations />} /> */}
       </Routes>
     </>

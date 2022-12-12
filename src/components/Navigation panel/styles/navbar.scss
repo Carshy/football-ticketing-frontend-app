@@ -1,10 +1,10 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  margin: 0 1px;
   text-align: center;
-  height: 96vh;
-  width: 200px;
+  height: 100vh;
+  border-right: 1px solid black;
+  padding: 50px;
 
   img {
     position: relative;
@@ -28,8 +28,14 @@
   }
 
   a.active {
-    background-color: greenyellow;
+    background-color: lawngreen;
     color: white;
+  }
+
+  a:hover {
+    background-color: lawngreen;
+    color: white;
+    transition: 0.5s ease-in-out;
   }
 
   a.inactive {
@@ -37,8 +43,13 @@
   }
 }
 
-hr {
-  position: relative;
-  left: 30px;
-  margin: 0 50px 0 0;
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 70px;
+}
+
+.nav-link > svg {
+  font-size: 25px;
 }

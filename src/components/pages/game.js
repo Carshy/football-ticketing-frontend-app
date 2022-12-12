@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const Game = (props) => {
   const {
@@ -7,11 +8,18 @@ const Game = (props) => {
   } = props;
 
   const fixture = `${hometeam} vs ${awayteam}`;
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/matches/${id}`);
+  };
 
   return (
     <div
       id={id}
       className="gameDiv"
+      onClick={handleClick}
+      onKeyDown={handleClick}
+      role="presentation"
     >
       <img
         src={photo}
