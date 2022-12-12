@@ -9,7 +9,15 @@
   flex-direction: row;
   overflow: hidden;
   white-space: nowrap;
-  margin-top: 100px;
+}
+
+.selection-list::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 6%;
+  padding-top: 1rem;
+  border-bottom: 3px solid lawngreen;
 }
 
 .gameDiv {
@@ -47,4 +55,8 @@
 
 .selection-list {
   color: #d3d3d3;
+}
+
+.gamePic {
+  cursor: pointer;
 }
