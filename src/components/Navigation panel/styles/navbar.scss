@@ -41,13 +41,21 @@
   a.inactive {
     color: black;
   }
+  
+  button {
+    margin: 90px 0 0 0;
+    background-color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 .nav-links {
   display: flex;
   justify-content: space-around;
   gap: 10px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .nav-link > svg {
