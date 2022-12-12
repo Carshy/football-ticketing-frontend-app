@@ -25,7 +25,7 @@ function Reservation() {
             <option value="angular">Angular</option>
             <option value="svelte">Svelte</option>
           </select>
-          <input type="submit" />
+          <input type="submit" value="Book Now" />
         </form>
         <motion.img
           whileInView={{ scale: [0, 1] }}
