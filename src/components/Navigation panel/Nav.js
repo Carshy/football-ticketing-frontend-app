@@ -6,6 +6,7 @@ import {
 import { BsGithub } from 'react-icons/bs';
 import Details from '../pages/Details';
 import Match from '../pages/Match';
+import AddMatch from '../pages/add_match';
 // import MyReservations from '../pages/MyReservations';
 import './styles/navbar.scss';
 
@@ -24,10 +25,10 @@ function Nav() {
           Matches
         </NavLink>
         <NavLink
-          to="/Tickets"
+          to="/add_match"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Ticket
+          Add Match
         </NavLink>
         <NavLink
           to="/myreservations"
@@ -48,6 +49,7 @@ function Nav() {
       <Routes>
         <Route path="/" element={<Match />} />
         <Route path="matches/:id" element={<Details />} />
+        <Route path="/add_match" element={<AddMatch />} />
         {/* <Route path="/myreservations" element={<MyReservations />} /> */}
       </Routes>
     </>
