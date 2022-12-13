@@ -1,7 +1,6 @@
 .homeContainer {
   width: 70%;
   text-align: center;
-  margin-top: 20px;
   margin: auto;
 }
 
@@ -60,4 +59,23 @@
 
 .gamePic {
   cursor: pointer;
+}
+
+button {
+  width: 30%;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: chartreuse;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  transition: 1s ease;
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+button:active {
+  transform: scale(0.95);
 }
