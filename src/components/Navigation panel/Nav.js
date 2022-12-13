@@ -10,6 +10,7 @@ import Match from '../pages/Match';
 // import MyReservations from '../pages/MyReservations';
 import './styles/navbar.scss';
 import Register from '../pages/Register';
+import Delete from '../pages/Delete';
 
 function Nav() {
   const handleLogout = () => {
@@ -41,10 +42,10 @@ function Nav() {
           Ticket
         </NavLink>
         <NavLink
-          to="/myreservations"
+          to="/delete_match"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Reservations
+          Delete Match
         </NavLink>
 
         <button type="button" onClick={handleLogout}>Logout</button>
@@ -61,7 +62,7 @@ function Nav() {
         <Route path="/" element={<Match />} />
         <Route path="/register" element={<Register />} />
         <Route path="matches/:id" element={<Details />} />
-        {/* <Route path="/myreservations" element={<MyReservations />} /> */}
+        <Route path="/delete_match" element={<Delete />} />
       </Routes>
     </>
   );
