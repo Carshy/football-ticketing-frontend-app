@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMatches } from '../store/matches/matches';
+import { fetchMatches } from '../redux/matches/matches';
 import Game from '../components/game';
 import '../styles/home.scss';
 
