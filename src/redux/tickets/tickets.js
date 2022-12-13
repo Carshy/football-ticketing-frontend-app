@@ -1,16 +1,48 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const API_URL = 'http://localhost:3000/api/v3/tickets';
 
+// action types
+const CREATE_TICKET = 'CREATE_TICKET';
 const FETCH_TICKET = 'FETCH_TICKET';
 
 const initialState = {
   tickets: [],
 };
 
+// creating tickets with axios
+export const createTicket = async (city, matchTime, userId, matchId) => {
+  const data = await axios({
+    method: 'POST',
+    url: 'http://localhost:3000/api/v3/tickets',
+    data: {
+      city,
+      date: matchTime,
+      user_id: userId,
+      match_id: matchId,
+    },
+  });
+  return data;
+};
+
+// action creators for create tickets
+export const ticketAction = (data) => ({
+  type: CREATE_TICKET,
+  payload: data,
+});
+
+export const userTicket = (city, matchTime, matchId, userId) => async (dispatch) => {
+  const data = await createTicket(city, matchTime, matchId, userId);
+  dispatch(ticketAction(data));
+};
+
+// reducer
 export default (state = initialState, action) => {
   switch (action.type) {
     case `${FETCH_TICKET}/fulfilled`:
+      return { ...state, tickets: action.payload };
+    case `${CREATE_TICKET}/fulfilled`:
       return { ...state, tickets: action.payload };
     default:
       return state;
