@@ -14,14 +14,12 @@ function Reservation() {
   const [matchId, setMatchId] = useState('');
 
   const matches = useSelector((state) => state.matches.matches);
-  console.log(matches);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const getTarget = e.target;
     const inputValue = getTarget.value;
-    console.log(inputValue.innerText);
     switch (getTarget.name) {
       case 'city':
         setCity(inputValue);
@@ -41,7 +39,6 @@ function Reservation() {
     const formTarget = e.target;
     e.preventDefault();
     formTarget.reset();
-    console.log(city, userId, matchTime, matchId);
     dispatch(userTicket(city, matchTime, userId, matchId));
     setCity('');
     setUserId('');
