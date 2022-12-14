@@ -12,13 +12,14 @@ const initialState = {
 };
 
 // creating tickets with axios
-export const createTicket = async (city, matchTime, userId, matchId) => {
+export const createTicket = async (city, matchTime, quantity, userId, matchId) => {
   const data = await axios({
     method: 'POST',
     url: 'http://localhost:3000/api/v3/tickets',
     data: {
       city,
       date: matchTime,
+      quantity,
       user_id: userId,
       match_id: matchId,
     },
@@ -32,8 +33,8 @@ export const ticketAction = (data) => ({
   payload: data,
 });
 
-export const userTicket = (city, matchTime, matchId, userId) => async (dispatch) => {
-  const data = await createTicket(city, matchTime, matchId, userId);
+export const userTicket = (city, matchTime, quantity, matchId, userId) => async (dispatch) => {
+  const data = await createTicket(city, matchTime, quantity, matchId, userId);
   dispatch(ticketAction(data));
 };
 
