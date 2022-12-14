@@ -80,3 +80,57 @@
 .delete-btn:active {
   transform: scale(0.95);
 }
+
+@media only screen and (max-width: 768px) {
+  .homeContainer {
+    width: 100%;
+  }
+
+  .slider {
+    display: flex;
+    flex-direction: row;
+    // overflow: hidden;
+    // white-space: nowrap;
+  }
+  
+  .selection-list::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 10%;
+    padding-top: 1rem;
+    border-bottom: 2px solid lawngreen;
+  }
+
+  .gameDiv {
+  display: flex;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+  }
+
+  .scrollLeft {
+    right: 35%;
+    // top: 230px;
+  }
+
+  .scrollRight {
+    left: 35%;
+    // top: 230px;
+  }
+
+  .selection-list {
+    color: #d3d3d3;
+  }
+
+  
+
+
+
+  
+  
+
+
+}
