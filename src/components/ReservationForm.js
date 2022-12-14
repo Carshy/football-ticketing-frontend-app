@@ -14,7 +14,7 @@ function Reservation() {
   const [matchId, setMatchId] = useState('');
 
   const matches = useSelector((state) => state.matches.matches);
-  // const users = useSelector((state) => state.users);
+  console.log(matches);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
