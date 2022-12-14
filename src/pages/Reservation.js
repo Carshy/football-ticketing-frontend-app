@@ -10,6 +10,8 @@ function Reservation() {
   const [matchTime, setMatchTime] = useState('');
   const [matchId, setMatchId] = useState('');
 
+  const reservations = useSelector((state) => state.tickets.tickets);
+
 
   return (
     <div className="form-field">
