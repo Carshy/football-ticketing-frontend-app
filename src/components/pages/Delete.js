@@ -68,7 +68,7 @@ function Delete() {
               date={match.date}
               photo={match.photo}
             />
-            <button type="button" onClick={() => handleDelete(match.id)}>Delete Match</button>
+            <button type="button" className="delete-btn" onClick={() => handleDelete(match.id)}>Delete Match</button>
           </div>
         ))}
       </div>

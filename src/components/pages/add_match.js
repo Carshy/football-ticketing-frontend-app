@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react';
-
 // import { Form, Button } from 'react-bootstrap';
-import './styles/match.scss';
+import toast, { Toaster } from 'react-hot-toast';
+import './styles/add-match.scss';
 
 const AddMatch = () => {
   const [stadium, setStadium] = useState('');
   const [location, setLocation] = useState('');
-  const [home_team, setHomeTeam] = useState('');
-  const [away_team, setAwayTeam] = useState('');
+  const [homeTeam, setHomeTeam] = useState('');
+  const [awayTeam, setAwayTeam] = useState('');
   const [price, setPrice] = useState('');
   const [date, setDate] = useState('');
   const [photo, setPhoto] = useState('');
-  const [user_id, setUserId] = useState('');
-  const [message, setMessage] = useState('');
+  const [userId, setUserId] = useState('');
 
   useEffect(() => {
-    const user = localStorage.getItem('user');
+    const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       setUserId(user.id);
     }
@@ -29,12 +28,12 @@ const AddMatch = () => {
         body: JSON.stringify({
           stadium,
           location,
-          home_team,
-          away_team,
+          home_team: homeTeam,
+          away_team: awayTeam,
           price,
           date,
           photo,
-          user_id,
+          user_id: userId,
         }),
         headers: {
           'Content-Type': 'application/json, charset=UTF-8',
@@ -51,9 +50,9 @@ const AddMatch = () => {
         setDate('');
         setPhoto('');
         setUserId('');
-        setMessage('Match created successfully');
+        toast.success('Match created');
       } else {
-        setMessage('Match not created');
+        toast.error('Match not Created');
       }
     } catch (error) {
       console.log(error);
@@ -61,8 +60,13 @@ const AddMatch = () => {
   };
 
   return (
-    <div className="add-match">
-      <form onSubmit={handleSubmit} className="form">
+    <div className="form">
+      <Toaster />
+      <div className="add-match">
+        <h1>Add a Match</h1>
+        <h4>Fill the form to add a Match</h4>
+      </div>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={stadium}
@@ -77,13 +81,13 @@ const AddMatch = () => {
         />
         <input
           type="text"
-          value={home_team}
+          value={homeTeam}
           placeholder="Home Team"
           onChange={(e) => setHomeTeam(e.target.value)}
         />
         <input
           type="text"
-          value={away_team}
+          value={awayTeam}
           placeholder="Away Team"
           onChange={(e) => setAwayTeam(e.target.value)}
         />
@@ -106,47 +110,8 @@ const AddMatch = () => {
           onChange={(e) => setPhoto(e.target.value)}
         />
         <button type="submit">Add Match</button>
-        <div className="message">
-          {message ? <p>{message}</p> : null}
-        </div>
       </form>
     </div>
-    // <div className="add-match mx-auto gap-5 mb-">
-    //   <Form onSubmit={handleSubmit}>
-    //     <Form.Group controlId="formBasicStadium" className="mb-3">
-    //       <Form.Label>Stadium</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Stadium" value={stadium} onChange={(e) => setStadium(e.target.value)} />
-    //     </Form.Group>
-    //     <Form.Group controlId="formBasicLocation" className="mb-3">
-    //       <Form.Label>Location</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Location" value={location} onChange={(e) => setLocation(e.target.value)} />
-    //     </Form.Group>
-    //     <Form.Group controlId="formBasicHomeTeam" className="mb-3">
-    //       <Form.Label>Home Team</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Home Team" value={home_team} onChange={(e) => setHomeTeam(e.target.value)} />
-    //     </Form.Group>
-    //     <Form.Group controlId="formBasicAwayTeam" className="mb-3">
-    //       <Form.Label>Away Team</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Away Team" value={away_team} onChange={(e) => setAwayTeam(e.target.value)} />
-    //     </Form.Group>
-    //     <Form.Group controlId="formBasicPrice" className="mb-3">
-    //       <Form.Label>Price</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-    //     </Form.Group>
-    //     <Form.Group controlId="formBasicDate" className="mb-3">
-    //       <Form.Label>Date</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Date" value={date} onChange={(e) => setDate(e.target.value)} />
-    //     </Form.Group>
-    //     <Form.Group controlId="formBasicPhoto" className="mb-3">
-    //       <Form.Label>Photo</Form.Label>
-    //       <Form.Control type="text" placeholder="Enter Photo" value={photo} onChange={(e) => setPhoto(e.target.value)} />
-    //     </Form.Group>
-    //     <Button type="submit">Add Match</Button>
-    //     <div className="message">
-    //       {message ? <p>{message}</p> : null}
-    //     </div>
-    //   </Form>
-    // </div>
   );
 };
 
