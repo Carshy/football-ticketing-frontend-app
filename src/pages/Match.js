@@ -47,19 +47,6 @@ const Match = () => {
             photo={match.photo}
           />
         ))}
-        {fixture.map((match) => (
-          <Game
-            key={match.id}
-            id={match.id}
-            hometeam={match.home_team}
-            awayteam={match.away_team}
-            stadium={match.stadium}
-            location={match.location}
-            price={match.price}
-            date={match.date}
-            photo={match.photo}
-          />
-        ))}
       </div>
     </div>
   );

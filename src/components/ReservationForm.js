@@ -19,6 +19,8 @@ function Reservation() {
   const handleChange = (e) => {
     const getTarget = e.target;
     const inputValue = getTarget.value;
+    console.log(inputValue);
+    console.log(getTarget.name);
     switch (getTarget.name) {
       case 'city':
         setCity(inputValue);
@@ -64,11 +66,15 @@ function Reservation() {
           <div>
             <input type="datetime-local" id="datetime" value={matchTime} name="datetime" onChange={handleChange} required />
           </div>
-          <select id="match" name="matchId" value={matchId} onChange={handleChange}>
+          <select id="match" name="matchId" value={matchId} onChange={(e) => { handleChange(e); }}>
             <option value="">Select your Match...</option>
             {matches.map((match) => (
               <option key={match.id} value={match.id}>
-                {match.match_id}
+                {match.home_team}
+                {' '}
+                vs
+                {' '}
+                {match.away_team}
               </option>
             ))}
           </select>
