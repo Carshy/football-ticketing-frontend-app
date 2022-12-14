@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 // import { Form, Button } from 'react-bootstrap';
 import './styles/match.scss';
 
@@ -10,8 +11,15 @@ const AddMatch = () => {
   const [price, setPrice] = useState('');
   const [date, setDate] = useState('');
   const [photo, setPhoto] = useState('');
-  const [user_id, setUserId] = useState(1);
+  const [user_id, setUserId] = useState('');
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const user = localStorage.getItem('user');
+    if (user) {
+      setUserId(user.id);
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -96,12 +104,6 @@ const AddMatch = () => {
           value={photo}
           placeholder="Photo"
           onChange={(e) => setPhoto(e.target.value)}
-        />
-        <input
-          type="text"
-          value={user_id}
-          placeholder="User Id"
-          onChange={(e) => setUserId(e.target.value)}
         />
         <button type="submit">Add Match</button>
         <div className="message">
