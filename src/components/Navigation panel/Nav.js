@@ -9,6 +9,7 @@ import { BsGithub } from 'react-icons/bs';
 import toast, { Toaster } from 'react-hot-toast';
 import Details from '../pages/Details';
 import Match from '../pages/Match';
+import AddMatch from '../pages/add_match';
 // import MyReservations from '../pages/MyReservations';
 import './styles/navbar.scss';
 import Register from '../pages/Register';
@@ -53,11 +54,11 @@ function Nav() {
           Matches
         </NavLink>
         <NavLink
-          to="/Tickets"
+          to="/add_match"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           onClick={() => closeMenu()}
         >
-          Ticket
+          Add Match
         </NavLink>
         <NavLink
           to="/delete_match"
@@ -81,6 +82,7 @@ function Nav() {
         <Route path="/" element={<Match />} />
         <Route path="/register" element={<Register />} />
         <Route path="matches/:id" element={<Details />} />
+        <Route path="/add_match" element={<AddMatch />} />
         <Route path="/delete_match" element={<Delete />} />
       </Routes>
     </>

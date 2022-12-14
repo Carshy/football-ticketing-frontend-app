@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-match {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+h4 {
+  color: #d3d3d3;
+  margin: 10px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+input {
+  height: 30px;
+  margin: 15px;
+}
+
+button {
+  border: none;
+  font-size: 1.2em;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: green;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: greenyellow;
+}
