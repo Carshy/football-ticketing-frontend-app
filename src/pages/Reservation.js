@@ -13,6 +13,24 @@ function Reservation() {
   const reservations = useSelector((state) => state.tickets.tickets);
   const dispatch = useDispatch();
 
+  const handleChange = (e) => {
+    const getTarget = e.target;
+    const inputValue = getTarget.value;
+    switch (getTarget.name) {
+      case 'city':
+        setCity(inputValue);
+        return city;
+      case 'matchTime':
+        setMatchTime(inputValue);
+        return matchTime;
+      case 'matchId':
+        setMatchId(inputValue);
+        return matchId;
+      default:
+        return 'yes';
+    }
+  };
+
 
   return (
     <div className="form-field">
@@ -24,12 +42,12 @@ function Reservation() {
       >
         <form>
           <div>
-            <input type="text" name="city" id="city" placeholder="Enter City" required />
+            <input type="text" name="city" id="city" value={city} placeholder="Enter City" onChange={handleChange} required />
           </div>
           <div>
-            <input type="datetime-local" id="datetime" name="datetime" required />
+            <input type="datetime-local" id="datetime" value={matchTime} name="datetime" onChange={handleChange} required />
           </div>
-          <select id="match" name="matchId">
+          <select id="match" name="matchId" value={matchId} onChange={handleChange}>
             <option value="">Select your Match...</option>
             {}
           </select>
