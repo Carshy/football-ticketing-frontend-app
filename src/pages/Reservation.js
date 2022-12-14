@@ -11,6 +11,7 @@ function Reservation() {
   const [matchId, setMatchId] = useState('');
 
   const reservations = useSelector((state) => state.tickets.tickets);
+  const dispatch = useDispatch();
 
 
   return (
