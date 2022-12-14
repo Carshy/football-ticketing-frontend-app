@@ -61,7 +61,14 @@ function Reservation() {
       >
         <form onSubmit={handleSubmit}>
           <div>
-            <input type="text" name="city" id="city" value={city} placeholder="Enter City" onChange={handleChange} required />
+            <select id="city" name="city" value={city} onChange={(e) => { handleChange(e); }}>
+              <option value="">Select Game Location...</option>
+              {matches.map((match) => (
+                <option key={match.id} value={match.id}>
+                  {match.location}
+                </option>
+              ))}
+            </select>
           </div>
           <div>
             <select id="datetime" name="datetime" value={matchTime} onChange={(e) => { handleChange(e); }}>
