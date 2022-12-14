@@ -63,9 +63,13 @@
 }
 
 .delete-btn {
-  width: 30%;
-  margin: 10px auto;
-  padding: 10px;
+  position: relative;
+  display: inline;
+  top: 470px;
+  right: 375px;
+  width: 40%;
+  height: 20%;
+  padding: 20px;
   background-color: chartreuse;
   border: none;
   border-radius: 20px;
@@ -104,7 +108,7 @@
 
   .gameDiv {
     display: flex;
-    width: 100%;
+    width: 80%;
 
     img {
       width: 100%;
