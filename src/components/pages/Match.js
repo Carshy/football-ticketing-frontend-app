@@ -9,6 +9,7 @@ const Match = () => {
   const myRef = useRef(null);
   const dispatch = useDispatch();
   const fixture = useSelector((state) => state.matches.matches);
+  console.log(fixture);
   useEffect(() => {
     dispatch(fetchMatches());
   }, []);
