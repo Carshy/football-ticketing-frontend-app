@@ -64,7 +64,14 @@ function Reservation() {
             <input type="text" name="city" id="city" value={city} placeholder="Enter City" onChange={handleChange} required />
           </div>
           <div>
-            <input type="datetime-local" id="datetime" value={matchTime} name="datetime" onChange={handleChange} required />
+            <select id="datetime" name="datetime" value={matchTime} onChange={(e) => { handleChange(e); }}>
+              <option value="">Select your Game Time...</option>
+              {matches.map((match) => (
+                <option key={match.id} value={match.id}>
+                  {match.date}
+                </option>
+              ))}
+            </select>
           </div>
           <select id="match" name="matchId" value={matchId} onChange={(e) => { handleChange(e); }}>
             <option value="">Select your Match...</option>
