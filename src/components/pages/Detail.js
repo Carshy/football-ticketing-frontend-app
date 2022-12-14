@@ -20,9 +20,7 @@ function Detail(props) {
   return (
     <div id={id}>
       <div className="details-div">
-        <div className="img-wrapper">
-          <img src={photo} alt="stadium" className="stadium" />
-        </div>
+        <img src={photo} alt="stadium" className="stadium" />
         <div className="wrapper">
           <div className="header">
             {' '}
@@ -75,7 +73,7 @@ function Detail(props) {
           <button type="button" className="buy">
             <span><CiSettings className="sett" /></span>
             {' '}
-            Buy Ticket
+            Reserve
           </button>
         </div>
       </div>
