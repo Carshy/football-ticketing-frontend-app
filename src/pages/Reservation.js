@@ -10,7 +10,7 @@ function Reservation() {
   const [matchTime, setMatchTime] = useState('');
   const [matchId, setMatchId] = useState('');
 
-  const reservations = useSelector((state) => state.tickets.tickets);
+  const matches = useSelector((state) => state.matches.matches);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -49,7 +49,12 @@ function Reservation() {
           </div>
           <select id="match" name="matchId" value={matchId} onChange={handleChange}>
             <option value="">Select your Match...</option>
-            {}
+            {matches.length > 0
+            && matches.map((match) => (
+              <option key={match.id} value={match.id}>
+                {match.name}
+              </option>
+            ))}
           </select>
           <input type="submit" value="Book Now" />
         </form>
