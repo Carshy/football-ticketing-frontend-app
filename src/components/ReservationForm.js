@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { userTicket } from '../redux/tickets/tickets';
+import { fetchMatches } from '../redux/matches/matches';
 import circle from '../assets/circle.svg';
 import '../styles/reservation.scss';
 
@@ -12,6 +14,7 @@ function Reservation() {
 
   const matches = useSelector((state) => state.matches.matches);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const getTarget = e.target;
@@ -31,6 +34,20 @@ function Reservation() {
     }
   };
 
+  const handleSubmit = (e) => {
+    const formTarget = e.target;
+    e.preventDefault();
+    formTarget.reset();
+    dispatch(userTicket(city, matchTime, matchId));
+    setCity('');
+    setMatchTime('');
+    setMatchId('');
+    setTimeout(() => { navigate('/tickets'); }, 1000);
+  };
+
+  useEffect(() => {
+    dispatch(fetchMatches());
+  }, []);
 
   return (
     <div className="form-field">
@@ -40,7 +57,7 @@ function Reservation() {
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="app__reservation-form"
       >
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <input type="text" name="city" id="city" value={city} placeholder="Enter City" onChange={handleChange} required />
           </div>
@@ -49,10 +66,9 @@ function Reservation() {
           </div>
           <select id="match" name="matchId" value={matchId} onChange={handleChange}>
             <option value="">Select your Match...</option>
-            {matches.length > 0
-            && matches.map((match) => (
+            {matches.map((match) => (
               <option key={match.id} value={match.id}>
-                {match.name}
+                {match.match_id}
               </option>
             ))}
           </select>

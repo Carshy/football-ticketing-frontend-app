@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import Match from '../pages/Match';
-import Reservation from '../pages/Reservation';
+import ReservationForm from './ReservationForm';
 import TicketList from './TicketList';
 import '../styles/navbar.scss';
 
@@ -26,7 +26,7 @@ function Nav() {
           Tickets
         </NavLink>
         <NavLink
-          to="/Reservation"
+          to="/ReservationForm"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           Book Reservation
@@ -36,7 +36,7 @@ function Nav() {
       <Routes>
         <Route path="/" element={<Match />} />
         <Route path="/TicketList" element={<TicketList />} />
-        <Route path="/Reservation" element={<Reservation />} />
+        <Route path="/ReservationForm" element={<ReservationForm />} />
       </Routes>
     </>
   );
