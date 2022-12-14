@@ -15,7 +15,6 @@ import Register from '../pages/Register';
 import Delete from '../pages/Delete';
 
 function Nav() {
-
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
@@ -34,14 +33,14 @@ function Nav() {
   return (
     <>
       <Toaster />
-            <button className="button" type="button" onClick={handleToggle}>
+      <button className="button" type="button" onClick={handleToggle}>
         {navbarOpen ? (
           <MdClose style={{ color: '#7b7b7b', width: '40px', height: '40px' }} />
         ) : (
           <FiMenu style={{ color: '#7b7b7b', width: '40px', height: '40px' }} />
         )}
       </button>
-       <nav className={`navbar ${navbarOpen ? ' showMenu' : ''}`}>
+      <nav className={`navbar ${navbarOpen ? ' showMenu' : ''}`}>
         <img
           src="https://img.freepik.com/premium-photo/close-up-football-action-scene-with-competing-soccer-players-stadium_207634-5551.jpg?w=826"
           alt="logo"
@@ -68,7 +67,7 @@ function Nav() {
           Delete Match
         </NavLink>
 
-        <button type="button" onClick={handleLogout}>Logout</button>
+        <button type="button" className="logout-button" onClick={handleLogout}>Logout</button>
         <ul className="nav-links">
           <li className="nav-link"><AiFillLinkedin /></li>
           <li className="nav-link"><AiOutlineTwitter /></li>
