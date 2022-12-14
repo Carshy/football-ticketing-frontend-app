@@ -1,13 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchMatches } from '../redux/matches/matches';
-import Game from '../components/game';
-import '../styles/home.scss';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { fetchMatches } from '../../redux/matches/matches';
+import './styles/home.scss';
+import Game from './game';
 
 const Match = () => {
   const myRef = useRef(null);
   const dispatch = useDispatch();
   const fixture = useSelector((state) => state.matches.matches);
+  console.log(fixture);
   useEffect(() => {
     dispatch(fetchMatches());
   }, []);
@@ -30,9 +32,9 @@ const Match = () => {
   return (
     <div className="homeContainer">
       <h1>Latest Matches</h1>
-      <h4>Please Select a Match</h4>
-      <button type="button" className="scrollLeft" onClick={handleLeftClick}>Left</button>
-      <button type="button" className="scrollRight" onClick={handleRightClick}>Right</button>
+      <h4 className="selection-list">Please Select a Match</h4>
+      <button aria-label="left-button" type="button" className="scrollLeft" onClick={handleLeftClick}><FaChevronLeft /></button>
+      <button aria-label="right-button" type="button" className="scrollRight" onClick={handleRightClick}><FaChevronRight /></button>
       <div className="slider" ref={myRef}>
         {fixture.map((match) => (
           <Game
@@ -40,9 +42,6 @@ const Match = () => {
             id={match.id}
             hometeam={match.home_team}
             awayteam={match.away_team}
-            stadium={match.stadium}
-            location={match.location}
-            price={match.price}
             date={match.date}
             photo={match.photo}
           />

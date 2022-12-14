@@ -1,0 +1,128 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  border-right: 1px solid black;
+  padding: 50px;
+
+  img {
+    position: relative;
+    left: 10px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  a {
+    border-radius: 4px;
+    padding: 6px 10px;
+    width: 100%;
+    text-decoration: none;
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  a.active {
+    background-color: lawngreen;
+    color: white;
+  }
+
+  a:hover {
+    background-color: lawngreen;
+    color: white;
+    transition: 0.5s ease-in-out;
+  }
+
+  a.inactive {
+    color: black;
+  }
+
+  .logout-button {
+    margin: 90px 0 0 0;
+    background-color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-link > svg {
+  font-size: 25px;
+}
+
+@media (min-width: 769px) {
+  .button {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  .navbar {
+    display: none;
+  }
+
+  .showMenu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    border-right: 1px solid black;
+    padding: 50px;
+    z-index: 10;
+
+    img {
+      position: relative;
+      left: 10px;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    a {
+      border-radius: 4px;
+      padding: 6px 10px;
+      width: 100%;
+      text-decoration: none;
+      margin: 5px 0;
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    a.active {
+      background-color: lawngreen;
+      color: white;
+    }
+
+    a:hover {
+      background-color: lawngreen;
+      color: white;
+      transition: 0.5s ease-in-out;
+    }
+
+    a.inactive {
+      color: black;
+    }
+  }
+
+  .button {
+    margin: 10px 0 0 10px;
+    background-color: transparent;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+  }
+}
