@@ -92,7 +92,7 @@
     // overflow: hidden;
     // white-space: nowrap;
   }
-  
+
   .selection-list::after {
     content: "";
     display: block;
@@ -103,12 +103,12 @@
   }
 
   .gameDiv {
-  display: flex;
-  width: 100%;
-
-  img {
+    display: flex;
     width: 100%;
-  }
+
+    img {
+      width: 100%;
+    }
   }
 
   .scrollLeft {
@@ -124,13 +124,4 @@
   .selection-list {
     color: #d3d3d3;
   }
-
-  
-
-
-
-  
-  
-
-
 }
