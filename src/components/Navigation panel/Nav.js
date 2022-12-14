@@ -6,12 +6,16 @@ import {
   AiFillLinkedin, AiOutlineTwitter, AiFillYoutube, AiFillFacebook,
 } from 'react-icons/ai';
 import { BsGithub } from 'react-icons/bs';
+import toast, { Toaster } from 'react-hot-toast';
 import Details from '../pages/Details';
 import Match from '../pages/Match';
 // import MyReservations from '../pages/MyReservations';
 import './styles/navbar.scss';
+import Register from '../pages/Register';
+import Delete from '../pages/Delete';
 
 function Nav() {
+
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
@@ -19,16 +23,25 @@ function Nav() {
   const closeMenu = () => {
     setNavbarOpen(false);
   };
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    toast.success('You have been logged out');
+    setTimeout(() => {
+      window.location.reload();
+    }, 2500);
+  };
+
   return (
     <>
-      <button className="button" type="button" onClick={handleToggle}>
+      <Toaster />
+            <button className="button" type="button" onClick={handleToggle}>
         {navbarOpen ? (
           <MdClose style={{ color: '#7b7b7b', width: '40px', height: '40px' }} />
         ) : (
           <FiMenu style={{ color: '#7b7b7b', width: '40px', height: '40px' }} />
         )}
       </button>
-      <nav className={`navbar ${navbarOpen ? ' showMenu' : ''}`}>
+       <nav className={`navbar ${navbarOpen ? ' showMenu' : ''}`}>
         <img
           src="https://img.freepik.com/premium-photo/close-up-football-action-scene-with-competing-soccer-players-stadium_207634-5551.jpg?w=826"
           alt="logo"
@@ -48,13 +61,14 @@ function Nav() {
           Ticket
         </NavLink>
         <NavLink
-          to="/myreservations"
+          to="/delete_match"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           onClick={() => closeMenu()}
         >
-          Reservations
+          Delete Match
         </NavLink>
 
+        <button type="button" onClick={handleLogout}>Logout</button>
         <ul className="nav-links">
           <li className="nav-link"><AiFillLinkedin /></li>
           <li className="nav-link"><AiOutlineTwitter /></li>
@@ -66,8 +80,9 @@ function Nav() {
       </nav>
       <Routes>
         <Route path="/" element={<Match />} />
+        <Route path="/register" element={<Register />} />
         <Route path="matches/:id" element={<Details />} />
-        {/* <Route path="/myreservations" element={<MyReservations />} /> */}
+        <Route path="/delete_match" element={<Delete />} />
       </Routes>
     </>
   );
