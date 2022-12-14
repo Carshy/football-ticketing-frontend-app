@@ -9,18 +9,19 @@ import '../styles/reservation.scss';
 
 function Reservation() {
   const [city, setCity] = useState('');
+  const [userId, setUserId] = useState(1);
   const [matchTime, setMatchTime] = useState('');
   const [matchId, setMatchId] = useState('');
 
   const matches = useSelector((state) => state.matches.matches);
+  // const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const getTarget = e.target;
     const inputValue = getTarget.value;
-    console.log(inputValue);
-    console.log(getTarget.name);
+    console.log(inputValue.innerText);
     switch (getTarget.name) {
       case 'city':
         setCity(inputValue);
@@ -40,11 +41,13 @@ function Reservation() {
     const formTarget = e.target;
     e.preventDefault();
     formTarget.reset();
-    dispatch(userTicket(city, matchTime, matchId));
+    console.log(city, userId, matchTime, matchId);
+    dispatch(userTicket(city, matchTime, userId, matchId));
     setCity('');
+    setUserId('');
     setMatchTime('');
     setMatchId('');
-    setTimeout(() => { navigate('/tickets'); }, 1000);
+    setTimeout(() => { navigate('/TicketList'); }, 1000);
   };
 
   useEffect(() => {
@@ -64,17 +67,17 @@ function Reservation() {
             <select id="city" name="city" value={city} onChange={(e) => { handleChange(e); }}>
               <option value="">Select Game Location...</option>
               {matches.map((match) => (
-                <option key={match.id} value={match.id}>
+                <option key={match.id} value={match.location}>
                   {match.location}
                 </option>
               ))}
             </select>
           </div>
           <div>
-            <select id="datetime" name="datetime" value={matchTime} onChange={(e) => { handleChange(e); }}>
+            <select id="datetime" name="matchTime" value={matchTime} onChange={(e) => { handleChange(e); }}>
               <option value="">Select your Game Time...</option>
               {matches.map((match) => (
-                <option key={match.id} value={match.id}>
+                <option key={match.id} value={match.date}>
                   {match.date}
                 </option>
               ))}
