@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTickets } from '../../redux/tickets/tickets';
 import Tickets from './Tickets';
+import './styles/ticketlist.scss';
 
 const TicketList = () => {
   const tickets = useSelector((state) => state.tickets.tickets);
@@ -13,7 +14,7 @@ const TicketList = () => {
 
   return (
     <div className="ticket-data">
-      <h3>Why not displaying</h3>
+      <h3>Here is your Match Ticket</h3>
       {tickets.map((ticket) => (
         <Tickets
           key={ticket.id}

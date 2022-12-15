@@ -1,0 +1,35 @@
+.ticket-data {
+//   background-color: lawngreen;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .ticket-section {
+    border: 1px solid #fff;
+    background: lawngreen;
+    margin: 2rem;
+    text-align: center;
+    width: 47%;
+
+    .ticket-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background: #FF5733;
+      padding: 1.2rem 0 1.2rem 0;
+      color: #fff;
+      font-weight: 800;
+      font-size: 2rem;
+      padding: 0 1rem 0 2rem;
+      gap: 4rem;
+
+      .ticket-image {
+        padding: 0.6rem 0 0.6rem 0;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}
