@@ -1,8 +1,8 @@
 import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { BiChevronRight } from 'react-icons/bi';
 import { CiSettings } from 'react-icons/ci';
-import { useNavigate } from 'react-router-dom';
 import './styles/details.scss';
 import muliticolor from './images/multicolor.png';
 
@@ -70,11 +70,14 @@ function Detail(props) {
             </span>
           </div>
           <img src={muliticolor} alt="multicolor" className="multicolor" />
-          <button type="button" className="buy">
+          <NavLink
+            to="reserve"
+            className="buy"
+            id={id}
+          >
             <span><CiSettings className="sett" /></span>
-            {' '}
             Reserve
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>

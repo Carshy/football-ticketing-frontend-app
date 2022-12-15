@@ -1,24 +1,29 @@
 import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import toast, { Toaster } from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
 import { userTicket } from '../../redux/tickets/tickets';
 import { fetchMatches } from '../../redux/matches/matches';
 import circle from './images/circle.svg';
 import './styles/reservation.scss';
 
-function ReservationForm() {
-  const [city, setCity] = useState('');
+function DetailsReserve() {
+  const { id } = useParams();
+
+  const matches = useSelector((state) => state.matches.matches);
+  const matchDetails = matches.filter((match) => match.id.toString() === id);
+
+  console.log(matchDetails);
+  const quantityOption = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [city, setCity] = useState(matchDetails.location);
   const [quantity, setQuantity] = useState('');
   const [userId, setUserId] = useState(1);
   const [matchTime, setMatchTime] = useState('');
   const [matchId, setMatchId] = useState('');
-
-  const matches = useSelector((state) => state.matches.matches);
-  const quantityOption = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const getTarget = e.target;
@@ -26,6 +31,7 @@ function ReservationForm() {
     console.log(getTarget);
     console.log(inputValue);
     console.log(getTarget.name);
+
     switch (getTarget.name) {
       case 'city':
         setCity(inputValue);
@@ -67,73 +73,46 @@ function ReservationForm() {
   return (
     <div className="form-field">
       <Toaster />
-      <div className="reservation-title">
-        <h3>Book your Reservation</h3>
-      </div>
+      <h3 className="reservation-title">Book your Reservation</h3>
       <motion.div
         whileInView={{ scale: [0, 1], opacity: [0, 1] }}
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="app__reservation-form"
       >
-        <form className="reserve-form" onSubmit={handleSubmit}>
-          <select
-            id="city"
-            name="city"
-            value={city}
-            onChange={(e) => {
-              handleChange(e);
-            }}
-          >
-            <option value="">Select Game Location...</option>
-            {matches.map((match) => (
-              <option key={match.id} value={match.location}>
-                {match.location}
-              </option>
-            ))}
-          </select>
-
-          <select
-            id="datetime"
-            name="matchTime"
-            value={matchTime}
-            onChange={(e) => {
-              handleChange(e);
-            }}
-          >
-            <option value="">Select your Game Time...</option>
-            {matches.map((match) => (
-              <option key={match.id} value={match.date}>
-                {match.date}
-              </option>
-            ))}
-          </select>
-
-          <select
-            id="match"
-            name="matchId"
-            value={matchId}
-            onChange={(e) => {
-              handleChange(e);
-            }}
-          >
+        <form onSubmit={handleSubmit}>
+          <div>
+            <select id="city" name="city" value={city} onChange={(e) => { handleChange(e); }}>
+              <option value="">Select Game Location...</option>
+              {matchDetails.map((match) => (
+                <option key={match.id} value={match.location}>
+                  {match.location}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <select id="datetime" name="matchTime" value={matchTime} onChange={(e) => { handleChange(e); }}>
+              <option value="">Select your Game Time...</option>
+              {matchDetails.map((match) => (
+                <option key={match.id} value={match.date}>
+                  {match.date}
+                </option>
+              ))}
+            </select>
+          </div>
+          <select id="match" name="matchId" value={matchId} onChange={(e) => { handleChange(e); }}>
             <option value="">Select your Match...</option>
-            {matches.map((match) => (
+            {matchDetails.map((match) => (
               <option key={match.id} value={match.id}>
                 {match.home_team}
+                {' '}
                 vs
+                {' '}
                 {match.away_team}
               </option>
             ))}
           </select>
-
-          <select
-            id="quantity"
-            name="quantity"
-            value={quantity}
-            onChange={(e) => {
-              handleChange(e);
-            }}
-          >
+          <select id="quantity" name="quantity" value={quantity} onChange={(e) => { handleChange(e); }}>
             <option value="">Ticket Quantity</option>
             {quantityOption.map((match) => (
               <option key={match} value={match}>
@@ -155,4 +134,4 @@ function ReservationForm() {
   );
 }
 
-export default ReservationForm;
+export default DetailsReserve;

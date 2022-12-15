@@ -11,6 +11,7 @@ import Details from '../pages/Details';
 import Match from '../pages/Match';
 import AddMatch from '../pages/add_match';
 import ReservationForm from '../pages/ReservationForm';
+import DetailsReserve from '../pages/DetailsReserve';
 import TicketList from '../pages/TicketList';
 import './styles/navbar.scss';
 import Register from '../pages/Register';
@@ -71,12 +72,14 @@ function Nav() {
         <NavLink
           to="/TicketList"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          onClick={() => closeMenu()}
         >
           Tickets
         </NavLink>
         <NavLink
           to="/ReservationForm"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          onClick={() => closeMenu()}
         >
           Book Reservation
         </NavLink>
@@ -99,6 +102,7 @@ function Nav() {
         <Route path="/delete_match" element={<Delete />} />
         <Route path="/TicketList" element={<TicketList />} />
         <Route path="/ReservationForm" element={<ReservationForm />} />
+        <Route path="/matches/:id/reserve" element={<DetailsReserve />} />
       </Routes>
     </>
   );
