@@ -55,7 +55,9 @@ function ReservationForm() {
     setUserId('');
     setMatchTime('');
     setMatchId('');
-    setTimeout(() => { navigate('/TicketList'); }, 1000);
+    setTimeout(() => {
+      navigate('/TicketList');
+    }, 1000);
   };
 
   useEffect(() => {
@@ -65,46 +67,73 @@ function ReservationForm() {
   return (
     <div className="form-field">
       <Toaster />
-      <h3 className="reservation-title">Book your Reservation</h3>
+      <div className="reservation-title">
+        <h3>Book your Reservation</h3>
+      </div>
       <motion.div
         whileInView={{ scale: [0, 1], opacity: [0, 1] }}
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="app__reservation-form"
       >
-        <form onSubmit={handleSubmit}>
-          <div>
-            <select id="city" name="city" value={city} onChange={(e) => { handleChange(e); }}>
-              <option value="">Select Game Location...</option>
-              {matches.map((match) => (
-                <option key={match.id} value={match.location}>
-                  {match.location}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <select id="datetime" name="matchTime" value={matchTime} onChange={(e) => { handleChange(e); }}>
-              <option value="">Select your Game Time...</option>
-              {matches.map((match) => (
-                <option key={match.id} value={match.date}>
-                  {match.date}
-                </option>
-              ))}
-            </select>
-          </div>
-          <select id="match" name="matchId" value={matchId} onChange={(e) => { handleChange(e); }}>
+        <form className="reserve-form" onSubmit={handleSubmit}>
+          <select
+            id="city"
+            name="city"
+            value={city}
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          >
+            <option value="">Select Game Location...</option>
+            {matches.map((match) => (
+              <option key={match.id} value={match.location}>
+                {match.location}
+              </option>
+            ))}
+          </select>
+
+          <select
+            id="datetime"
+            name="matchTime"
+            value={matchTime}
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          >
+            <option value="">Select your Game Time...</option>
+            {matches.map((match) => (
+              <option key={match.id} value={match.date}>
+                {match.date}
+              </option>
+            ))}
+          </select>
+
+          <select
+            id="match"
+            name="matchId"
+            value={matchId}
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          >
             <option value="">Select your Match...</option>
             {matches.map((match) => (
               <option key={match.id} value={match.id}>
                 {match.home_team}
-                {' '}
                 vs
-                {' '}
                 {match.away_team}
               </option>
             ))}
           </select>
-          <select id="quantity" name="quantity" value={quantity} onChange={(e) => { handleChange(e); }}>
+
+          <select
+            id="quantity"
+            name="quantity"
+            value={quantity}
+            onChange={(e) => {
+              handleChange(e);
+            }}
+          >
             <option value="">Ticket Quantity</option>
             {quantityOption.map((match) => (
               <option key={match} value={match}>

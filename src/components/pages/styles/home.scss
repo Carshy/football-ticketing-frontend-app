@@ -94,8 +94,6 @@
   .slider {
     display: flex;
     flex-direction: row;
-    // overflow: hidden;
-    // white-space: nowrap;
   }
 
   .selection-list::after {
@@ -118,12 +116,10 @@
 
   .scrollLeft {
     right: 35%;
-    // top: 230px;
   }
 
   .scrollRight {
     left: 35%;
-    // top: 230px;
   }
 
   .selection-list {
