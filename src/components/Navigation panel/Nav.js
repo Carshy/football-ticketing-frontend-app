@@ -10,7 +10,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import Details from '../pages/Details';
 import Match from '../pages/Match';
 import AddMatch from '../pages/add_match';
-// import MyReservations from '../pages/MyReservations';
+import ReservationForm from '../pages/ReservationForm';
+import TicketList from '../pages/TicketList';
 import './styles/navbar.scss';
 import Register from '../pages/Register';
 import Delete from '../pages/Delete';
@@ -67,6 +68,18 @@ function Nav() {
         >
           Delete Match
         </NavLink>
+        <NavLink
+          to="/TicketList"
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+        >
+          Tickets
+        </NavLink>
+        <NavLink
+          to="/ReservationForm"
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+        >
+          Book Reservation
+        </NavLink>
 
         <button type="button" className="logout-button" onClick={handleLogout}>Logout</button>
         <ul className="nav-links">
@@ -84,6 +97,8 @@ function Nav() {
         <Route path="matches/:id" element={<Details />} />
         <Route path="/add_match" element={<AddMatch />} />
         <Route path="/delete_match" element={<Delete />} />
+        <Route path="/TicketList" element={<TicketList />} />
+        <Route path="/ReservationForm" element={<ReservationForm />} />
       </Routes>
     </>
   );
