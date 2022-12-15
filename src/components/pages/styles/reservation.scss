@@ -53,3 +53,67 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .form-field {
+    font-family: sans-serif;
+    background: greenyellow;
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // height: 100vh;
+
+    .reservation-title {
+      text-align: center;
+    }
+  
+    .reserve-form {
+      margin: 5rem auto 0;
+      width: 21rem;
+      object-fit: contain;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      div,
+      select {
+        margin-bottom: 1.5rem;
+        width: inherit;
+      }
+  
+      input,
+      select {
+        padding: 0 0.5rem;
+        width: inherit;
+        height: 3rem;
+        border-radius: 4px;
+        border: none;
+        box-sizing: border-box;
+      }
+  
+      input[type="submit"] {
+        height: 3rem;
+        font-size: 1rem;
+        color: #000;
+        background: #fff;
+        cursor: pointer;
+        border-radius: 4rem;
+      }
+  
+      p {
+        margin-top: 0.5rem;
+        color: #f90;
+      }
+  
+      .overlay_circle {
+        display: none;
+      }
+    }
+  } 
+}

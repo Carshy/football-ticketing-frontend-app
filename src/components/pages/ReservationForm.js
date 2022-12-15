@@ -68,8 +68,8 @@ function ReservationForm() {
         transition={{ duration: 1, ease: 'easeInOut' }}
         className="app__reservation-form"
       >
-        <form onSubmit={handleSubmit}>
-          <div>
+        <form className="reserve-form" onSubmit={handleSubmit}>
+          <div className="form-select">
             <select id="city" name="city" value={city} onChange={(e) => { handleChange(e); }}>
               <option value="">Select Game Location...</option>
               {matches.map((match) => (
