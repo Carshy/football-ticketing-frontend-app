@@ -11,16 +11,18 @@ const Tickets = (props) => {
         <img className="ticket-image" src={trophy} alt="ticket trophy" />
         <h4>Football Ticket</h4>
       </div>
-      <h3>
-        Location:
-        {' '}
-        {city}
-      </h3>
-      <p>
-        Date:
-        {' '}
-        {date}
-      </p>
+      <div className="ticket-details">
+        <h3>
+          Location:
+          {' '}
+          {city}
+        </h3>
+        <p>
+          Date:
+          {' '}
+          {date}
+        </p>
+      </div>
     </div>
   );
 };

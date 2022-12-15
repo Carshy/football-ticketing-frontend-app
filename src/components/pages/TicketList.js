@@ -14,7 +14,7 @@ const TicketList = () => {
 
   return (
     <div className="ticket-data">
-      <h3>Here is your Match Ticket</h3>
+      <h3 className="ticket-welcome">Here is your Match Ticket</h3>
       {tickets.map((ticket) => (
         <Tickets
           key={ticket.id}
