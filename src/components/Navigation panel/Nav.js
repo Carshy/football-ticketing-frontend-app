@@ -17,7 +17,7 @@ import './styles/navbar.scss';
 import Register from '../pages/Register';
 import Delete from '../pages/Delete';
 
-function Nav() {
+const Nav = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
@@ -106,6 +106,6 @@ function Nav() {
       </Routes>
     </>
   );
-}
+};
 
 export default Nav;

@@ -6,7 +6,7 @@ import Nav from './components/Navigation panel/Nav';
 import './app.scss';
 import Register from './components/pages/Register';
 
-function App() {
+const App = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -32,6 +32,6 @@ function App() {
       <Register />
     </>
   );
-}
+};
 
 export default App;

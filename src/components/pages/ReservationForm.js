@@ -8,7 +8,7 @@ import { fetchMatches } from '../../redux/matches/matches';
 import circle from './images/circle.svg';
 import './styles/reservation.scss';
 
-function ReservationForm() {
+const ReservationForm = () => {
   const [city, setCity] = useState('');
   const [quantity, setQuantity] = useState('');
   const [userId, setUserId] = useState(1);
@@ -23,9 +23,7 @@ function ReservationForm() {
   const handleChange = (e) => {
     const getTarget = e.target;
     const inputValue = getTarget.value;
-    console.log(getTarget);
-    console.log(inputValue);
-    console.log(getTarget.name);
+
     switch (getTarget.name) {
       case 'city':
         setCity(inputValue);
@@ -153,6 +151,6 @@ function ReservationForm() {
       </motion.div>
     </div>
   );
-}
+};
 
 export default ReservationForm;

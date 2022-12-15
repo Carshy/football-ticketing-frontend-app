@@ -8,13 +8,12 @@ import { fetchMatches } from '../../redux/matches/matches';
 import circle from './images/circle.svg';
 import './styles/reservation.scss';
 
-function DetailsReserve() {
+const DetailsReserve = () => {
   const { id } = useParams();
 
   const matches = useSelector((state) => state.matches.matches);
   const matchDetails = matches.filter((match) => match.id.toString() === id);
 
-  console.log(matchDetails);
   const quantityOption = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,9 +27,6 @@ function DetailsReserve() {
   const handleChange = (e) => {
     const getTarget = e.target;
     const inputValue = getTarget.value;
-    console.log(getTarget);
-    console.log(inputValue);
-    console.log(getTarget.name);
 
     switch (getTarget.name) {
       case 'city':
@@ -132,6 +128,6 @@ function DetailsReserve() {
       </motion.div>
     </div>
   );
-}
+};
 
 export default DetailsReserve;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import './styles/register.scss';
 
-function Register() {
+const Register = () => {
   const [user, setUser] = useState('');
 
   const handleChange = (e) => {
@@ -82,6 +82,6 @@ function Register() {
       </form>
     </div>
   );
-}
+};
 
 export default Register;
