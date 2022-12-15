@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
+import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { userTicket } from '../../redux/tickets/tickets';
 import { fetchMatches } from '../../redux/matches/matches';
@@ -45,6 +46,7 @@ function ReservationForm() {
     e.preventDefault();
     formTarget.reset();
     dispatch(userTicket(city, matchTime, quantity, userId, matchId));
+    toast.success('Reservation Created Successful');
     setCity('');
     setQuantity('');
     setUserId('');
@@ -59,6 +61,7 @@ function ReservationForm() {
 
   return (
     <div className="form-field">
+      <Toaster />
       <h3 className="reservation-title">Book your Reservation</h3>
       <motion.div
         whileInView={{ scale: [0, 1], opacity: [0, 1] }}
