@@ -1,10 +1,7 @@
 .form-field {
   font-family: sans-serif;
   background: greenyellow;
-  // padding: 4rem;
-  // margin: auto;
   width: 100%;
-  // height: 100vh;
 
   .reservation-title {
     display: flex;
@@ -16,12 +13,8 @@
     display: flex;
     width: 100%;
     
-
-    
-
     input,
     select {
-      // padding: 0 0.5rem;
       width: inherit;
       height: 3rem;
       border-radius: 4px;
@@ -29,15 +22,6 @@
       box-sizing: border-box;
       margin: 4px;
     }
-
-    // input[type="submit"] {
-    //   height: 3rem;
-    //   font-size: 1rem;
-    //   color: #000;
-    //   background: #fff;
-    //   cursor: pointer;
-    //   border-radius: 4rem;
-    // }
 
     .overlay_circle {
       position: absolute;
@@ -51,69 +35,3 @@
   }
 }
 
-// @media only screen and (max-width: 768px) {
-//   .form-field {
-//     font-family: sans-serif;
-//     background: greenyellow;
-//     padding: 4rem;
-//     margin: auto;
-//     width: 100%;
-//     // height: 100vh;
-
-//     .reservation-title {
-//       text-align: center;
-//     }
-
-//     .app__reservation-form {
-
-//     }
-
-//     .reserve-form {
-//       margin: 5rem auto 0;
-//       width: 100%;
-//       object-fit: contain;
-//       z-index: 1;
-//       display: flex;
-//       flex-direction: column;
-//       justify-content: center;
-//       align-items: center;
-
-//       .form-select {
-//         margin-bottom: 1.5rem;
-//         width: inherit;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//       }
-
-//       input,
-//       select {
-//         padding: 0 0.5rem;
-//         width: inherit;
-//         height: 3rem;
-//         border-radius: 4px;
-//         border: none;
-//         box-sizing: border-box;
-//       }
-
-//       input[type="submit"] {
-//         height: 3rem;
-//         font-size: 1rem;
-//         color: #000;
-//         background: #fff;
-//         cursor: pointer;
-//         border-radius: 4rem;
-//       }
-
-//       p {
-//         margin-top: 0.5rem;
-//         color: #f90;
-//       }
-
-//       .overlay_circle {
-//         display: none;
-//       }
-//     }
-//   }
-// }

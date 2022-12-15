@@ -137,20 +137,11 @@
   .img-wrapper {
     width: 300px;
   }
-
-  // .header {}
+  
 
   li {
     list-style-type: none;
   }
-
-  // .details-holder {}
-
-  // .details {}
-
-  // .details-header {}
-
-  // .details-body-item {}
 
   .details-body-item:nth-child(even) {
     background-color: lightgray;
@@ -180,8 +171,6 @@
     display: flex;
     flex-direction: column;
   }
-
-  // .buy {}
 
   .buy:hover {
     color: lawngreen;
