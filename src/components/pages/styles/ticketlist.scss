@@ -1,16 +1,13 @@
 .ticket-data {
-  //   background-color: lawngreen;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   .ticket-welcome {
-    padding-bottom: 2%;
     font-weight: bold;
     font-size: 46px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri;
     text-transform: capitalize;
     background-image: linear-gradient(
       -225deg,
@@ -27,7 +24,6 @@
     -webkit-text-fill-color: transparent;
     animation: textclip 4s linear infinite;
     display: inline-block;
-    font-size: 50px;
   }
 
   @keyframes textclip {
