@@ -9,11 +9,13 @@ import './styles/reservation.scss';
 
 function ReservationForm() {
   const [city, setCity] = useState('');
+  const [quantity, setQuantity] = useState('');
   const [userId, setUserId] = useState(1);
   const [matchTime, setMatchTime] = useState('');
   const [matchId, setMatchId] = useState('');
 
   const matches = useSelector((state) => state.matches.matches);
+  const quantityOption = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -30,6 +32,9 @@ function ReservationForm() {
       case 'matchId':
         setMatchId(inputValue);
         return matchId;
+      case 'quantity':
+        setQuantity(inputValue);
+        return quantity;
       default:
         return 'yes';
     }
@@ -39,8 +44,9 @@ function ReservationForm() {
     const formTarget = e.target;
     e.preventDefault();
     formTarget.reset();
-    dispatch(userTicket(city, matchTime, userId, matchId));
+    dispatch(userTicket(city, matchTime, quantity, userId, matchId));
     setCity('');
+    setQuantity('');
     setUserId('');
     setMatchTime('');
     setMatchId('');
@@ -89,6 +95,14 @@ function ReservationForm() {
                 vs
                 {' '}
                 {match.away_team}
+              </option>
+            ))}
+          </select>
+          <select id="quantity" name="quantity" value={quantity} onChange={(e) => { handleChange(e); }}>
+            <option value="">Ticket Quantity</option>
+            {quantityOption.map((match) => (
+              <option key={match} value={match}>
+                {match}
               </option>
             ))}
           </select>

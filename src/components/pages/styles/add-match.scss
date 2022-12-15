@@ -30,7 +30,7 @@ input {
   margin: 15px;
 }
 
-button {
+.add-match-btn {
   border: none;
   font-size: 1.2em;
   border-radius: 0.2rem;
@@ -40,6 +40,6 @@ button {
   margin: 0 auto;
 }
 
-button:hover {
+.add-match-btn:hover {
   background-color: greenyellow;
 }
