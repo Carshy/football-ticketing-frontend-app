@@ -109,7 +109,7 @@ const AddMatch = () => {
           placeholder="Photo"
           onChange={(e) => setPhoto(e.target.value)}
         />
-        <button type="submit">Add Match</button>
+        <button className="add-match-btn" type="submit">Add Match</button>
       </form>
     </div>
   );
