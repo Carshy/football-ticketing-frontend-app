@@ -58,10 +58,9 @@ function Delete() {
       <button aria-label="right-button" type="button" className="scrollRight" onClick={handleRightClick}><FaChevronRight /></button>
       <div className="slider" ref={myRef}>
         {fixture.map((match) => (
-          <div
-            key={match.id}
-          >
+          <>
             <Game
+              key={match.id}
               id={match.id}
               hometeam={match.home_team}
               awayteam={match.away_team}
@@ -69,7 +68,7 @@ function Delete() {
               photo={match.photo}
             />
             <button type="button" className="delete-btn" onClick={() => handleDelete(match.id)}>Delete Match</button>
-          </div>
+          </>
         ))}
       </div>
     </div>
