@@ -81,7 +81,7 @@
     cursor: pointer;
   }
 
-  .discover > span {
+  .discover>span {
     font-size: 30px;
   }
 
@@ -138,7 +138,10 @@
     width: 300px;
   }
 
-  // .header {}
+  .header {
+    font-weight: bold;
+    font-size: 27px;
+  }
 
   li {
     list-style-type: none;
@@ -146,11 +149,28 @@
 
   // .details-holder {}
 
-  // .details {}
+  .details {
+    border: 1px solid lightgray;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
 
-  // .details-header {}
+  }
 
-  // .details-body-item {}
+  .details-header {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .details-body-item {
+        padding: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
 
   .details-body-item:nth-child(even) {
     background-color: lightgray;
@@ -168,7 +188,7 @@
     cursor: pointer;
   }
 
-  .discover > span {
+  .discover>span {
     font-size: 30px;
   }
 
@@ -181,7 +201,18 @@
     flex-direction: column;
   }
 
-  // .buy {}
+  .buy {
+       color: white;
+    background-color: lawngreen;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
 
   .buy:hover {
     color: lawngreen;

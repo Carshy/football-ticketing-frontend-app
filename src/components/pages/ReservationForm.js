@@ -23,6 +23,9 @@ function ReservationForm() {
   const handleChange = (e) => {
     const getTarget = e.target;
     const inputValue = getTarget.value;
+    console.log(getTarget);
+    console.log(inputValue);
+    console.log(getTarget.name);
     switch (getTarget.name) {
       case 'city':
         setCity(inputValue);
