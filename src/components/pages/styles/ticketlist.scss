@@ -62,5 +62,23 @@
         border-radius: 50%;
       }
     }
+
+    .ticket-details {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .ticket-ball {
+        padding: 0.6rem 0 0.6rem 0;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+      }
+
+      .ticket-info {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }
