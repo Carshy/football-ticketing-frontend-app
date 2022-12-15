@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { userTicket } from '../redux/tickets/tickets';
-import { fetchMatches } from '../redux/matches/matches';
-import circle from '../assets/circle.svg';
-import '../styles/reservation.scss';
+import { userTicket } from '../../redux/tickets/tickets';
+import { fetchMatches } from '../../redux/matches/matches';
+import circle from './images/circle.svg';
+import './styles/reservation.scss';
 
-function Reservation() {
+function ReservationForm() {
   const [city, setCity] = useState('');
   const [userId, setUserId] = useState(1);
   const [matchTime, setMatchTime] = useState('');
@@ -106,4 +106,4 @@ function Reservation() {
   );
 }
 
-export default Reservation;
+export default ReservationForm;
