@@ -2,7 +2,7 @@
   font-family: sans-serif;
   background: greenyellow;
   width: 100%;
-  
+
   .reservation-title {
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
   form {
     display: flex;
     width: 100%;
-    
+
     input,
     select {
       width: inherit;
@@ -34,4 +34,3 @@
     }
   }
 }
-
