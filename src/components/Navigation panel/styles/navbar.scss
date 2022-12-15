@@ -74,17 +74,17 @@
   }
 
   .showMenu {
-display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-right: 1px solid black;
-  padding: 50px;
-  position: fixed;
-  width: 90%;
-  top: 0;
-  background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid black;
+    padding: 50px;
+    position: fixed;
+    width: 90%;
+    top: 0;
+    background: white;
 
     img {
       position: relative;
