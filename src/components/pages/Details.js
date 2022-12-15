@@ -1,7 +1,8 @@
 import React from 'react';
+import { useParams } from 'react-router-dom/';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import Detail from './Detail';
+import './styles/details.scss';
 
 const Details = () => {
   const { id } = useParams();
@@ -26,5 +27,4 @@ const Details = () => {
     </div>
   );
 };
-
 export default Details;
