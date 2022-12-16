@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+src / index.jsimport React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import toast, { Toaster } from 'react-hot-toast';
