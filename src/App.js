@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import Nav from './components/Navigation panel/Nav';
+import './app.scss';
+import Register from './components/pages/Register';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUser(storedUser);
+    }
+  }, [user]);
+
+  if (user) {
+    return (
+      <div className="app">
+        <BrowserRouter>
+          <Provider store={store}>
+            <Nav />
+          </Provider>
+        </BrowserRouter>
+      </div>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Register />
+    </>
   );
-}
+};
 
 export default App;

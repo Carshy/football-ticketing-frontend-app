@@ -1,0 +1,133 @@
+.homeContainer {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.selection-list::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 6%;
+  padding-top: 1rem;
+  border-bottom: 3px solid lawngreen;
+}
+
+.gameDiv {
+  display: flex;
+  flex-direction: column;
+  margin: 0 100px;
+
+  img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+  }
+}
+
+.scrollLeft {
+  position: relative;
+  right: 45%;
+  top: 230px;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: greenyellow;
+  cursor: pointer;
+}
+
+.scrollRight {
+  position: relative;
+  left: 45%;
+  top: 230px;
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: greenyellow;
+  cursor: pointer;
+}
+
+.selection-list {
+  color: #d3d3d3;
+}
+
+.gamePic {
+  cursor: pointer;
+}
+
+.delete-btn {
+  position: relative;
+  display: inline;
+  text-align: center;
+  top: 470px;
+  right: 375px;
+  width: 40%;
+  height: 20%;
+  padding: 20px;
+  background-color: chartreuse;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  transition: 1s ease;
+}
+
+.delete-btn:hover {
+  transform: scale(1.15);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+@media only screen and (max-width: 768px) {
+  .homeContainer {
+    width: 100%;
+  }
+
+  .slider {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .selection-list::after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 10%;
+    padding-top: 1rem;
+    border-bottom: 2px solid lawngreen;
+  }
+
+  .gameDiv {
+    display: flex;
+    width: 80%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .scrollLeft {
+    right: 35%;
+  }
+
+  .scrollRight {
+    left: 35%;
+  }
+
+  .selection-list {
+    color: #d3d3d3;
+  }
+
+  .delete-btn {
+    right: 315px;
+    top: 430px;
+  }
+}
