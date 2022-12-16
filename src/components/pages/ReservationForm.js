@@ -118,7 +118,9 @@ const ReservationForm = () => {
             {matches.map((match) => (
               <option key={match.id} value={match.id}>
                 {match.home_team}
+                {' '}
                 vs
+                {' '}
                 {match.away_team}
               </option>
             ))}
