@@ -6,7 +6,7 @@ import { CiSettings } from 'react-icons/ci';
 import './styles/details.scss';
 import muliticolor from './images/multicolor.png';
 
-function Detail(props) {
+const Detail = (props) => {
   const {
     id, hometeam, awayteam, location, stadium, price, photo, date,
   } = props;
@@ -82,7 +82,7 @@ function Detail(props) {
       </div>
     </div>
   );
-}
+};
 
 Detail.propTypes = {
   id: PropTypes.number.isRequired,

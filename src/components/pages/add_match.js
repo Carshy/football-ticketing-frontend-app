@@ -39,7 +39,6 @@ const AddMatch = () => {
         },
       });
       const data = await response.json();
-      console.log(data);
       if (data.status === 'created') {
         setStadium('');
         setLocation('');
@@ -54,7 +53,7 @@ const AddMatch = () => {
         toast.error('Match not Created');
       }
     } catch (error) {
-      console.log(error);
+      toast.error(error);
     }
   };
 

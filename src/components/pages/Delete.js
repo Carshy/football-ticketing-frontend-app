@@ -6,7 +6,7 @@ import { fetchMatches } from '../../redux/matches/matches';
 import './styles/home.scss';
 import Game from './game';
 
-function Delete() {
+const Delete = () => {
   const myRef = useRef(null);
   const dispatch = useDispatch();
   const fixture = useSelector((state) => state.matches.matches);
@@ -73,6 +73,6 @@ function Delete() {
       </div>
     </div>
   );
-}
+};
 
 export default Delete;
